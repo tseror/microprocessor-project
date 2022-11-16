@@ -1,8 +1,8 @@
 simulateur:
-	cd simulateur && ocamlbuild main.byte && mv main.byte ../simulateur.byte
+	cd simulateur && ocamlbuild main.byte && mv main.byte ./simulateur.byte
 
 clean:
 	rm -f -R simulateur/_build
-	rm -f simulateur.byte
+	rm -f simulateur/simulateur.byte
 
 .PHONY: simulateur
