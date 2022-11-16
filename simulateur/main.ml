@@ -45,6 +45,5 @@ if not !schedule_only then begin
   let rom = Array.init (String.length s) (fun i -> match s.[i] with '0' -> false | '1' -> true | _ -> assert false) in
   let s = (try load_file !ram_filename with Sys_error(s) -> "") in
   let ram = Array.init (String.length s) (fun i -> match s.[i] with '0' -> false | '1' -> true | _ -> assert false) in
-  Format.printf "%d" (Array.length ram);
   Netlist_simulator.simulator scheduled_netlist !number_steps rom ram
 end
